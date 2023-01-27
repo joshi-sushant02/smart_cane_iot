@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_cane/common_utils/colors.dart';
+import 'package:smart_cane/pages/guardian/guardian.dart';
+import 'package:smart_cane/pages/guardian/share_loc.dart';
 import 'package:smart_cane/pages/settings/more/bluetooth.dart';
 import 'package:smart_cane/pages/settings/more/emergency_calls.dart';
 import 'package:smart_cane/pages/settings/profile/profile_page.dart';
@@ -38,13 +40,14 @@ class MyApp extends StatelessWidget {
         textTheme: DEFAULT_TEXT_THEME,
       ),
       themeMode: ThemeMode.light,
-      initialRoute: '/start',
+      initialRoute: '/home',
       routes: {
         '/start': (_) => const StartScreen(),
         '/home': (_) => const HomePage(),
         '/profile': (_) => const ProfilePage(),
         '/bluetooth': (_) => const BlueTooth(),
         '/emergency': (_) => const EmergencyCalls(),
+        '/share_loc': (_) => ShareLocation(),
       },
     );
   }

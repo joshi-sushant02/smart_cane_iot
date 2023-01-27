@@ -27,7 +27,13 @@ class _BodyState extends State<Body> {
     return SingleChildScrollView(
       padding: const EdgeInsets.only(top: 20),
       child: Column(
-        children: [Location(), Map(), Battery(), Obstacle(), WaterAlert()],
+        children: [
+          Location(context),
+          Map(),
+          Battery(),
+          Obstacle(),
+          WaterAlert()
+        ],
       ),
     );
   }
@@ -67,7 +73,7 @@ class _BodyState extends State<Body> {
   }
 }
 
-Widget Location() {
+Widget Location(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 20),
     child: Container(
@@ -126,7 +132,9 @@ Widget Location() {
                     height: 31,
                     width: 163,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/share_loc');
+                        },
                         style: ButtonStyle(
                             shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(

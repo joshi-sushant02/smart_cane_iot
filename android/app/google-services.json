@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "837064782205",
-    "project_id": "smart-cane-7e95a",
-    "storage_bucket": "smart-cane-7e95a.appspot.com"
+    "project_number": "53288068601",
+    "project_id": "smart-cane-374907",
+    "storage_bucket": "smart-cane-374907.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:837064782205:android:933da7e35b959f40375c14",
+        "mobilesdk_app_id": "1:53288068601:android:b38b46f43212a0b07c8928",
         "android_client_info": {
-          "package_name": "com.mitwpu.smart_cane"
+          "package_name": "com.example.smart_cane"
         }
       },
       "oauth_client": [
         {
-          "client_id": "837064782205-qv2urotn4cv7mnds83fl1inj4k1uha65.apps.googleusercontent.com",
+          "client_id": "53288068601-hof4puivnn2h0jsi9a24p0jf0jm5ib79.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBkXDJKr326AhIUitGDp9LYoWpgWsIckKI"
+          "current_key": "AIzaSyBUysIO2ZMmVANW6Aq6w4L_dhSWQt1XlI4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "837064782205-qv2urotn4cv7mnds83fl1inj4k1uha65.apps.googleusercontent.com",
+              "client_id": "53288068601-hof4puivnn2h0jsi9a24p0jf0jm5ib79.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
