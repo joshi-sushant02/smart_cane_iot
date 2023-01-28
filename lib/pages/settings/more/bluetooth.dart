@@ -25,7 +25,6 @@ class _BlueToothState extends State<BlueTooth> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Bottom(),
       appBar: appBar(context, "Bluetooth"),
       body: Stack(
         children: [

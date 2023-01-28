@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:smart_cane/globals.dart';
+import 'package:smart_cane/pages/guardian/share_loc.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
 import 'home_widgets.dart';
 
@@ -12,8 +13,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int pageIndex = 0;
   bool mic = false;
   bool on = true;
+  final List<Widget> widgets_list = [
+    Body(
+      key: UniqueKey(),
+    ),
+    ShareLocation(key: UniqueKey())
+  ];
   void swap() {
     setState(() {
       on = !on;
@@ -23,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: Bottom(),
+        bottomNavigationBar: Bottom(context),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           backgroundColor: COLOR_THEME['secondary'],
@@ -85,7 +93,32 @@ class _HomePageState extends State<HomePage> {
                     image: AssetImage("assets/background-circuit.png"),
                     fit: BoxFit.cover)),
           ),
-          Body(),
+          widgets_list[pageIndex],
         ]));
+  }
+
+  Widget Bottom(BuildContext context) {
+    return BottomNavigationBar(
+      currentIndex: pageIndex,
+      onTap: (index) {
+        setState(() {
+          pageIndex = index;
+        });
+      },
+      backgroundColor: COLOR_THEME['primary'],
+      selectedItemColor: COLOR_THEME['tertiary'],
+      unselectedItemColor: COLOR_THEME['secondary'],
+      elevation: 0.2,
+      items: const [
+        BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            label: "Home",
+            activeIcon: Icon(Icons.home)),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.navigation_outlined),
+            label: "Navigation",
+            activeIcon: Icon(Icons.navigation_rounded))
+      ],
+    );
   }
 }

@@ -1,5 +1,7 @@
 {
   "cmake.sourceDirectory": "${workspaceFolder}/linux",
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Nu Disco Dark"
 }

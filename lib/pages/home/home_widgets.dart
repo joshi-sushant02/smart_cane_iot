@@ -7,6 +7,8 @@ bool wateralert = false;
 bool obstaclealert = true;
 
 class Body extends StatefulWidget {
+  const Body({super.key});
+
   @override
   State<Body> createState() => _BodyState();
 }
@@ -235,16 +237,4 @@ Widget WaterAlert() {
       ),
     ),
   );
-}
-
-Widget Bottom() {
-  return BottomAppBar(
-      elevation: 0.2,
-      notchMargin: 7,
-      clipBehavior: Clip.antiAlias,
-      color: COLOR_THEME['primary'],
-      child: const SizedBox(
-        width: double.infinity,
-        height: 60,
-      ));
 }

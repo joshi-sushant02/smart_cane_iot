@@ -4,9 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart' as loc;
 import 'package:permission_handler/permission_handler.dart';
+import 'package:smart_cane/globals.dart';
 import 'package:smart_cane/pages/guardian/guardian.dart';
+import 'package:smart_cane/pages/home/home_page.dart';
+import 'package:smart_cane/pages/home/home_widgets.dart';
 
 class ShareLocation extends StatefulWidget {
+  const ShareLocation({super.key});
+
   @override
   _ShareLocationState createState() => _ShareLocationState();
 }
@@ -26,9 +31,6 @@ class _ShareLocationState extends State<ShareLocation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('live location tracker'),
-      ),
       body: Column(
         children: [
           TextButton(

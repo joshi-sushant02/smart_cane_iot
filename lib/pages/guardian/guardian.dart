@@ -16,47 +16,7 @@ class _MyMapState extends State<MyMap> {
   bool _added = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('location').snapshots(),
-      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        if (_added) {
-          mymap(snapshot);
-        }
-        if (!snapshot.hasData) {
-          return Center(child: CircularProgressIndicator());
-        }
-        return GoogleMap(
-          mapType: MapType.normal,
-          markers: {
-            Marker(
-                position: LatLng(
-                  snapshot.data!.docs.singleWhere(
-                      (element) => element.id == widget.user_id)['latitude'],
-                  snapshot.data!.docs.singleWhere(
-                      (element) => element.id == widget.user_id)['longitude'],
-                ),
-                markerId: MarkerId('id'),
-                icon: BitmapDescriptor.defaultMarkerWithHue(
-                    BitmapDescriptor.hueMagenta)),
-          },
-          initialCameraPosition: CameraPosition(
-              target: LatLng(
-                snapshot.data!.docs.singleWhere(
-                    (element) => element.id == widget.user_id)['latitude'],
-                snapshot.data!.docs.singleWhere(
-                    (element) => element.id == widget.user_id)['longitude'],
-              ),
-              zoom: 14.47),
-          onMapCreated: (GoogleMapController controller) async {
-            setState(() {
-              _controller = controller;
-              _added = true;
-            });
-          },
-        );
-      },
-    ));
+    return Scaffold(body: MyMap(widget.user_id));
   }
 
   Future<void> mymap(AsyncSnapshot<QuerySnapshot> snapshot) async {
