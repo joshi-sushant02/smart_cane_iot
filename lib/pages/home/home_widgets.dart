@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:smart_cane/globals.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
 
@@ -26,17 +27,18 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.only(top: 20),
-      child: Column(
-        children: [
-          Location(context),
-          Map(),
-          Battery(),
-          Obstacle(),
-          WaterAlert()
-        ],
-      ),
+    return Column(
+      children: [
+        Location(context),
+        Map(),
+        Battery(),
+        Expanded(
+          child: SingleChildScrollView(
+              child: Column(
+            children: [Obstacle(), WaterAlert()],
+          )),
+        )
+      ],
     );
   }
 
@@ -135,7 +137,10 @@ Widget Location(BuildContext context) {
                     width: 163,
                     child: ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).pushNamed('/share_loc');
+                          // Navigator.of(context).pushNamed('/share_loc');
+                          Fluttertoast.showToast(
+                              msg:
+                                  "Current Location will be shared to guardian");
                         },
                         style: ButtonStyle(
                             shape: MaterialStateProperty.all<

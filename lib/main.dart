@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         '/profile': (_) => const ProfilePage(),
         '/bluetooth': (_) => const BlueTooth(),
         '/emergency': (_) => const EmergencyCalls(),
-        '/share_loc': (_) => ShareLocation(),
+        '/share_loc': (_) => const ShareLocation(),
       },
     );
   }

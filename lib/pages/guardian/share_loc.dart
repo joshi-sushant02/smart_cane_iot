@@ -6,8 +6,10 @@ import 'package:location/location.dart' as loc;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:smart_cane/globals.dart';
 import 'package:smart_cane/pages/guardian/guardian.dart';
+import 'package:smart_cane/pages/guardian/map.dart';
 import 'package:smart_cane/pages/home/home_page.dart';
 import 'package:smart_cane/pages/home/home_widgets.dart';
+import 'package:smart_cane/services/helper/speech_to_text.dart';
 
 class ShareLocation extends StatefulWidget {
   const ShareLocation({super.key});
@@ -78,7 +80,7 @@ class _ShareLocationState extends State<ShareLocation> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) =>
-                                  MyMap(snapshot.data!.docs[index].id)));
+                                  Map(user_id: snapshot.data!.docs[index].id)));
                         },
                       ),
                     );
@@ -114,7 +116,7 @@ class _ShareLocationState extends State<ShareLocation> {
       await FirebaseFirestore.instance.collection('location').doc('user1').set({
         'latitude': currentlocation.latitude,
         'longitude': currentlocation.longitude,
-        'name': 'john'
+        'name': 'sushant'
       }, SetOptions(merge: true));
     });
   }

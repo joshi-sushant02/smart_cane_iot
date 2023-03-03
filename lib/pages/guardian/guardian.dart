@@ -16,7 +16,7 @@ class _MyMapState extends State<MyMap> {
   bool _added = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: MyMap(widget.user_id));
+    return MyMap(widget.user_id);
   }
 
   Future<void> mymap(AsyncSnapshot<QuerySnapshot> snapshot) async {
